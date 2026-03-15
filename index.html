@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="in-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashwa shakti</title>
+
+    <link href="css.css" rel="stylesheet">
+    <link rel="stylesheet" href="comments.css">
+    <link rel="stylesheet" href="style_6.css">
+    <link rel="stylesheet" href="intlTelInput.css">
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="scripts.js"></script>
+
+    <script>
+        var start = 0;
+        var duration = 47;
+    </script>
+
+    <style>
+        .formFb__img {
+            max-width: 350px !important;
+        }
+
+        .tv_icons {
+            flex-wrap: wrap;
+        }
+
+        #video {
+            pointer-events: none;
+        }
+
+        .iti {
+            width: 100%;
+        }
+
+        .formFb {
+            scroll-margin-top: 20px;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .formFb.form-highlight {
+            box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.18), 0 20px 45px rgba(0,0,0,0.18);
+            transform: scale(1.01);
+            border-radius: 14px;
+        }
+
+        .formFb__msg {
+            margin-top: 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 14px;
+            min-height: 20px;
+        }
+
+        .formFb__msg.success {
+            color: #118a2c;
+        }
+
+        .formFb__msg.error {
+            color: #c62828;
+        }
+
+        .exit-strip {
+            display: none;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+            background: #fff3cd;
+            color: #7a4b00;
+            border-top: 1px solid #f0d58a;
+            padding: 10px 14px;
+            text-align: center;
+            font-weight: 700;
+            z-index: 999;
+            box-shadow: 0 -8px 20px rgba(0,0,0,0.08);
+        }
+
+        .exit-strip.show {
+            display: block;
+        }
+
+        @media screen and (max-width: 500px) {
+            .main_header {
+                font-size: 25px;
+            }
+
+            .tv_icons {
+                gap: 10px;
+            }
+
+            .tv_icons img {
+                width: 85px;
+            }
+
+            .block_tv p {
+                font-size: 28px;
+            }
+
+            #open-video,
+            #popup,
+            #play {
+                font-size: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 380px) {
+            .main_header {
+                font-size: 30px;
+            }
+
+            .block_tv p {
+                font-size: 24px;
+            }
+
+            .tv_icons img {
+                width: 70px;
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+            .main_header {
+                font-size: 30px;
+            }
+
+            .tv_icons > img {
+                scale: 0.7;
+            }
+        }
+
+        select {
+            display: block;
+            border: 1px solid #3578e563;
+            padding-left: 10px;
+            padding: .5em .65em;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .fb-comments-wrapper {
+            display: none;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body class="iti-mobile">
+
+    <h1 class="main_header">डायबिटीज़ का खात्मा <span class="green_bg">बिना सर्जरी और बिना दर्द!</span></h1>
+    <br>
+    <span class="green_bg"></span>
+
+    <div id="container_video">
+        <div id="close"></div>
+
+        <div id="open-video">
+            <div>
+                <h4>देखते रहने के लिए क्लिक करें</h4>
+            </div>
+        </div>
+        <div id="popup" style="display:none;"></div>
+        <div id="play">
+            <div>
+                <h4>वीडियो शुरू हो चुका है</h4>
+                <h4>सुनने के लिए क्लिक करें!</h4>
+            </div>
+        </div>
+
+        <video id="video" autoplay muted playsinline src="video.mp4" poster="poster.png" preload="metadata"></video>
+    </div>
+
+    <!-- FIXED FORM: form now wraps all fields properly -->
+    <form id="order" class="order_form" novalidate>
+        <div id="formFb" class="formFb">
+            <div class="formFb__container">
+                <h2>Madhu shant</h2>
+                <p class="formFb__action formFb__text"><b>जल्दी करें!</b> प्रचार पैकेज जल्द ही समाप्त हो जाएंगे।</p>
+
+                <p class="formFb__counter formFb__text">
+                    <b>अद्यतन:</b> केवल <span class="form-instock red">17</span>
+                    इकाइयाँ शेष हैं <span class="js-current-date"></span>।
+                </p>
+
+                <div class="formFb__img">
+                    <img src="product.png" alt="Madhushant">
+                </div>
+
+                <div class="formFb__price">
+                    <p class="formFb__price--txt formFb__text">-50% की छूट</p>
+                    <span class="formFb__price--p">
+                        <span class="oldPriceAndLabelForLandingInfoApi formFb__price--old">
+                            <span class="price-old">4980</span> <span>INR</span>
+                        </span>
+                        <span class="priceAndLabelForLandingInfoApi formFb__price--new">
+                            <span class="price-new">2490</span> <span>INR</span>
+                        </span>
+                    </span>
+                </div>
+
+                <div class="formFb__timer">
+                    <p class="formFb__text">समाप्त होता है</p>
+                    <div class="timer">10:00</div>
+                </div>
+
+                <div class="formFb__inputs">
+                    <label for="lead_name">आपका नाम:</label>
+                    <input
+                        id="lead_name"
+                        name="name"
+                        placeholder="नाम"
+                        required
+                        autocomplete="name"
+                        type="text"
+                        minlength="3"
+                    >
+                </div>
+
+                <div class="formFb__inputs">
+                    <label for="lead_phone">आपका फोन:</label>
+                    <input
+                        id="lead_phone"
+                        name="phone"
+                        required
+                        autocomplete="tel"
+                        inputmode="numeric"
+                        minlength="6"
+                        type="tel"
+                        value=""
+                    >
+                </div>
+
+                <input type="hidden" name="lead_status" id="lead_status" value="submitted">
+                <input type="hidden" name="source_page" id="source_page" value="">
+                <input type="hidden" name="page_title" id="page_title" value="">
+                <input type="hidden" name="submitted_at" id="submitted_at" value="">
+
+                <button class="formFb__btn" id="submitBtn" type="submit">ऑर्डर भेजें</button>
+
+                <div id="form-message" class="formFb__msg" aria-live="polite"></div>
+
+                <p class="formFb__counter formFb__text">
+                    *एक पैकेज पर यह छूट एक उपचार का ऑर्डर करने पर मान्य है
+                </p>
+
+                <object type="svg+xml" data="loader.svg" style="position:absolute;visibility:hidden"></object>
+            </div>
+        </div>
+    </form>
+
+    <div id="exitStrip" class="exit-strip">
+        रुकिए! अपना नाम और नंबर भरें — आपकी जानकारी सुरक्षित रूप से सेव हो जाएगी।
+    </div>
+
+    <embed class="search-img" style="position:absolute; z-index:-1; opacity:0;" src="search.svg" type="svg+xml">
+
+    <section class="comments py-4" style="max-width: 900px; margin: 0 auto;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="fb-comments" style="margin-top: 5px;">
+                        <div class="fb-comments-header">
+                            <span>टिप्पणियाँ</span>
+                        </div>
+
+                        <div class="fb-comments-wrapper" style="display:block; opacity:1.0332;">
+                            <table class="fb-comments-comment" id="15">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" class="fb-comments-comment-img"><img src="w7.jpg" alt=""></td>
+                                        <td><font class="fb-comments-comment-name"><name>अनिला</name></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-text">मुझे वीडियो बहुत छोटा लगा, काश इसमें और चीजें होतीं, लेकिन मुझे यह पसंद आया और मैं सिखाई गई हर चीज को करना शुरू करूंगी।</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-actions"><like>मुझे पसंद है</like> · <reply>जवाब दें</reply> · <likes>79</likes> <date>3 मिनट</date></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="fb-comments-wrapper">
+                            <table class="fb-comments-comment" id="16">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" class="fb-comments-comment-img"><img src="m7.jpg" alt=""></td>
+                                        <td><font class="fb-comments-comment-name"><name>आनंद</name></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-text">सभी जो प्रकार 2 की समस्याओं से पीड़ित हैं, उन्हें इसे देखना चाहिए, जो यह उजागर करता है वह अविश्वसनीय है, मैंने कभी नहीं सोचा था कि यह हो सकता है!</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-actions"><like>मुझे पसंद है</like> · <reply>जवाब दें</reply> · <likes>81</likes> <date>3 मिनट</date></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="fb-comments-wrapper">
+                            <table class="fb-comments-comment" id="14">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" class="fb-comments-comment-img"><img src="m6.jpg" alt=""></td>
+                                        <td><font class="fb-comments-comment-name"><name>अमृत</name></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-text">आमेन! भगवान का आशीर्वाद</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-actions"><like>मुझे पसंद है</like> · <reply>जवाब दें</reply> · <likes>66</likes> <date>2 मिनट</date></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="fb-comments-wrapper" id="13">
+                            <table class="fb-comments-comment">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" class="fb-comments-comment-img"><img src="w6.jpg" alt=""></td>
+                                        <td><font class="fb-comments-comment-name"><name>अमिता</name></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-text">भगवान इस आदमी को आशीर्वाद दे</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-actions"><like>मुझे पसंद है</like> · <reply>जवाब दें</reply> · <likes>50</likes> <date>2 मिनट</date></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="fb-comments-wrapper resposta" id="12">
+                            <table class="fb-comments-comment">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" class="fb-comments-comment-img"><img src="w5.jpg" alt=""></td>
+                                        <td><font class="fb-comments-comment-name"><name>अमला</name></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-text">मुझे वास्तव में उम्मीद है कि यह काम करेगा, मैंने इतनी सारी चीज़ें आजमाई हैं! लेकिन इसमें पूरा अर्थ है</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-actions"><like>मुझे पसंद है</like> · <reply>जवाब दें</reply> · <likes>47</likes> <date>2 मिनट</date></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="fb-comments-wrapper resposta" id="11">
+                            <table class="fb-comments-comment">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" class="fb-comments-comment-img"><img src="m5.jpg" alt=""></td>
+                                        <td><font class="fb-comments-comment-name"><name>अमर</name></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-text">मैंने इसके बारे में कभी नहीं सुना, यह अजीब लग रहा था लेकिन इसमें बहुत मायने हैं... मैंने इसे आज़माना शुरू कर दिया है, और पहले कुछ दिनों में ही यह काम कर रहा है!</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-actions"><like>मुझे पसंद है</like> · <reply>जवाब दें</reply> · <likes>40</likes> <date>2 मिनट</date></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="fb-comments-wrapper">
+                            <table class="fb-comments-comment" id="10">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" class="fb-comments-comment-img"><img src="m4.jpg" alt=""></td>
+                                        <td><font class="fb-comments-comment-name"><name>अखिल</name></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-text">शानदार @अकांक्षा! मैं आज से अपने पति के साथ शुरुआत कर रही हूँ... हम दोनों को प्रकार 2 है</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-actions"><like>मुझे पसंद है</like> · <reply>जवाब दें</reply> · <likes>41</likes> <date>2 मिनट</date></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="fb-comments-wrapper" id="9">
+                            <table class="fb-comments-comment">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" class="fb-comments-comment-img"><img src="w4.jpg" alt=""></td>
+                                        <td><font class="fb-comments-comment-name"><name>अकांक्षा</name></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-text">हाँ @अवंतिका, यह वास्तव में काम करता है, मैं जीवित प्रमाण हूँ... मैं अपना पैर खोने वाली थी... इस वीडियो के लिए धन्यवाद, मैंने इसे बचा लिया। मेरा पूरा परिवार उत्साहित है, हम इस अद्भुत व्यक्ति को वापस देने की कोशिश कर रहे हैं जिसने हमारी मदद की। मैं हर दिन इस वीडियो को साझा करती हूं</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-actions"><like>मुझे पसंद है</like> · <reply>जवाब दें</reply> · <likes>22</likes> <date>2 मिनट</date></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="fb-comments-wrapper" id="7">
+                            <table class="fb-comments-comment">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" class="fb-comments-comment-img"><img src="w3.jpg" alt=""></td>
+                                        <td><font class="fb-comments-comment-name"><name>अवंतिका</name></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-text">क्या यह वास्तव में काम करता है?</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-actions"><like>मुझे पसंद है</like> · <reply>जवाब दें</reply> · <likes>18</likes> <date>3 मिनट</date></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="fb-comments-wrapper" id="6">
+                            <table class="fb-comments-comment">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" class="fb-comments-comment-img"><img src="m3.jpg" alt=""></td>
+                                        <td><font class="fb-comments-comment-name"><name>आदित्य</name></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-text">समाधान हमेशा वहीं था... लेकिन किसी ने इसे नहीं देखा, बहुत बहुत धन्यवाद, आपने प्रकाश और आशा लाई है!</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-actions"><like>मुझे पसंद है</like> · <reply>जवाब दें</reply> · <likes>17</likes> <date>3 मिनट</date></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="fb-comments-wrapper" id="5">
+                            <table class="fb-comments-comment">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" class="fb-comments-comment-img"><img src="w2.jpg" alt=""></td>
+                                        <td><font class="fb-comments-comment-name"><name>अभिलाषा</name></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-text">मुझे वीडियो की एडिटिंग पसंद नहीं आई... लेकिन मुझे पूरी तरह से समझ में आया! मैं सब कुछ मानती हूं</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-actions"><like>मुझे पसंद है</like> · <reply>जवाब दें</reply> · <likes>15</likes> <date>3 मिनट</date></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="fb-comments-wrapper resposta" id="4">
+                            <table class="fb-comments-comment">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" class="fb-comments-comment-img"><img src="w1.jpg" alt=""></td>
+                                        <td><font class="fb-comments-comment-name"><name>अभा</name></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-text">मैं इस वीडियो को अन्य लोगों को भेजूंगी, मैं उन लोगों को जानती हूँ जो वित्तीय कठिनाइयों का सामना कर रहे हैं जिन्हें यह वीडियो इस जीवन से बाहर निकलने में मदद कर सकता है।</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-actions"><like>मुझे पसंद है</like> · <reply>जवाब दें</reply> · <likes>11</likes> <date>3 मिनट</date></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="fb-comments-wrapper" id="3">
+                            <table class="fb-comments-comment">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" class="fb-comments-comment-img"><img src="m2.jpg" alt=""></td>
+                                        <td><font class="fb-comments-comment-name"><name>अजीत</name></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-text">मैंने अभी देखना शुरू किया है और इस वीडियो ने मुझे पहले ही प्रकार 2 के बारे में सोचने का एक नया तरीका दिया है</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-actions"><like>मुझे पसंद है</like> · <reply>जवाब दें</reply> · <likes>9</likes> <date>3 मिनट</date></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="fb-comments-wrapper" id="2">
+                            <table class="fb-comments-comment">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" class="fb-comments-comment-img"><img src="m1.jpg" alt=""></td>
+                                        <td><font class="fb-comments-comment-name"><name class="">अभय</name></font></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-text">यह थोड़ा विवादास्पद है, लेकिन मुझे लगता है कि इसे देखने लायक है ताकि हम अपनी राय बना सकें...</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fb-comments-comment-actions"><like>मुझे पसंद है</like> · <reply>जवाब दें</reply> · <likes>8</likes> <date>3 मिनट</date></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div id="more">
+                            <div class="fb-comments-wrapper">
+                                <table class="fb-comments-comment" id="16">
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="3" class="fb-comments-comment-img"><img src="w8.jpg" alt=""></td>
+                                            <td><font class="fb-comments-comment-name"><name>अंकिता</name></font></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fb-comments-comment-text">बहुत अच्छा, मैं इसे आजमाऊंगी! ...</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fb-comments-comment-actions"><like>मुझे पसंद है</like> · <reply>जवाब दें</reply> · <likes>85</likes> <date>3 मिनट</date></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p><strong><span style="text-align:center;">टिप्पणी करने के लिए आपको लॉग इन करना होगा</span></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var comments = document.querySelectorAll('.fb-comments-wrapper');
+
+            function fadeInElement(element, duration) {
+                var start = null;
+                function step(timestamp) {
+                    if (!start) start = timestamp;
+                    var progress = timestamp - start;
+                    element.style.opacity = Math.min(progress / duration, 1);
+                    if (progress < duration) {
+                        window.requestAnimationFrame(step);
+                    }
+                }
+                window.requestAnimationFrame(step);
+            }
+
+            function displayCommentsSequentially(index) {
+                if (index >= comments.length) return;
+
+                var comment = comments[index];
+                comment.style.display = 'block';
+                fadeInElement(comment, 500);
+
+                if (index > 0) {
+                    comments[index - 1].parentNode.insertBefore(comment, comments[index - 1]);
+                }
+
+                setTimeout(function () {
+                    displayCommentsSequentially(index + 1);
+                }, 10000);
+            }
+
+            displayCommentsSequentially(0);
+        });
+    </script>
+
+    <script>
+        function startTimers() {
+            const timers = document.querySelectorAll('.timer');
+
+            timers.forEach(timer => {
+                let [minutes, seconds] = timer.textContent.split(':').map(Number);
+                let totalSeconds = minutes * 60 + seconds;
+
+                const updateTimer = () => {
+                    if (totalSeconds <= 0) {
+                        timer.textContent = '0:00';
+                        return;
+                    }
+
+                    totalSeconds--;
+                    const newMinutes = Math.floor(totalSeconds / 60);
+                    const newSeconds = totalSeconds % 60;
+                    timer.textContent = `${newMinutes}:${newSeconds < 10 ? '0' : ''}${newSeconds}`;
+                };
+
+                updateTimer();
+                setInterval(updateTimer, 1000);
+            });
+        }
+
+        window.onload = () => {
+            const popup = document.getElementById('popup');
+            const video = document.getElementById('video');
+
+            if (popup) {
+                popup.onclick = () => startTimers();
+            }
+
+            if (video) {
+                video.onended = () => startTimers();
+            }
+        };
+    </script>
+    <script src="intlTelInput.min.js"></script>
+<script src="phoneCheck.js"></script>
+<script src="lead-submit.js"></script>
+<script src="comeback.js"></script>
+<script src="video9.js"></script>
+
+</body>
+</html>
